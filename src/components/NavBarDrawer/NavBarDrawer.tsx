@@ -10,10 +10,8 @@ import {
   Toolbar,
   Typography,
   useScrollTrigger,
-  useTheme,
 } from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
@@ -35,7 +33,6 @@ const ElevationScroll = (props: any) => {
 
 export const NavBarDrawer = (props: any) => {
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -79,14 +76,8 @@ export const NavBarDrawer = (props: any) => {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon style={{ color: "#fff" }} />
-            ) : (
-              <ChevronRightIcon style={{ color: "#fff" }} />
-            )}
-          </IconButton>
+        <div className={classes.drawerHeader} onClick={handleDrawerClose}>
+          <ChevronLeftIcon style={{ color: "#fff" }} />
         </div>
         <Divider style={{ color: "#fff" }} />
         <List>
