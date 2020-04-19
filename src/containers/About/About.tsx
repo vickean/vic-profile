@@ -14,9 +14,11 @@ export const About = (props: any) => {
             Welcome to vickean.com! It's still being built so bookmark this page and
             check back often.
          </Card>
-         {demoArr.map(() => {
+         {demoArr.map((el, i) => {
             return (
-               <Card style={{ margin: "1rem", padding: "1rem" }}>{loremIpsum}</Card>
+               <Card key={i} style={{ margin: "1rem", padding: "1rem" }}>
+                  {loremIpsum}
+               </Card>
             );
          })}
       </Fragment>

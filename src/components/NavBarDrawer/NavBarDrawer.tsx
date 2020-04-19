@@ -79,7 +79,7 @@ export const NavBarDrawer = (props: any) => {
          <ElevationScroll>
             <AppBar
                position="fixed"
-               style={{ background: "rgba(0, 0, 0, 0)" }}
+               style={{ background: "rgba(0, 0, 0, 0.5)" }}
                className={classes.appBar}
             >
                <Toolbar>
