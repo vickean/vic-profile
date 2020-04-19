@@ -1,9 +1,12 @@
 import { Grid, Typography } from "@material-ui/core";
 import React from "react";
+import { useStyles } from "./styles";
 
 export const Hello = (props: any) => {
+   const classes = useStyles();
+
    return (
-      <div>
+      <div className={classes.helloDiv}>
          <Grid
             container
             spacing={0}
