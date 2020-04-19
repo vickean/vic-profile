@@ -8,31 +8,17 @@ import {
    ListItemIcon,
    ListItemText,
    Toolbar,
-   Typography,
    useScrollTrigger,
 } from "@material-ui/core";
+import BuildIcon from "@material-ui/icons/Build";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import InfoIcon from "@material-ui/icons/Info";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import PanToolIcon from "@material-ui/icons/PanTool";
-import InfoIcon from "@material-ui/icons/Info";
-import BuildIcon from "@material-ui/icons/Build";
 import WorkIcon from "@material-ui/icons/Work";
-import React, { cloneElement, useState } from "react";
+import React, { useState } from "react";
 import { useStyles } from "./styles";
-
-const ElevationScroll = (props: any) => {
-   const { children } = props;
-
-   const trigger = useScrollTrigger({
-      disableHysteresis: true,
-      threshold: 0,
-   });
-
-   return cloneElement(children, {
-      elevation: trigger ? 4 : 0,
-   });
-};
 
 export const NavBarDrawer = (props: any) => {
    const classes = useStyles();
@@ -46,58 +32,64 @@ export const NavBarDrawer = (props: any) => {
       setOpen(false);
    };
 
+   const scrollTrig = useScrollTrigger({
+      disableHysteresis: true,
+      threshold: 0,
+   });
+
    const menuOptions = [
       {
          label: "Hello",
          icon: <PanToolIcon />,
-         link: "",
+         divId: "helloSec",
       },
       {
          label: "About",
          icon: <InfoIcon />,
-         link: "",
+         divId: "aboutSec",
       },
       {
          label: "Skills",
          icon: <BuildIcon />,
-         link: "",
+         divId: "skillsSec",
       },
       {
          label: "Work",
          icon: <WorkIcon />,
-         link: "",
+         divId: "workSec",
       },
       {
          label: "Contact",
          icon: <MailIcon />,
-         link: "",
+         divId: "contactSec",
       },
    ];
 
    return (
       <div className={classes.root}>
-         <ElevationScroll>
-            <AppBar
-               position="fixed"
-               style={{ background: "rgba(0, 0, 0, 0.5)" }}
-               className={classes.appBar}
-            >
-               <Toolbar>
-                  <IconButton
-                     edge="start"
-                     color="inherit"
-                     aria-label="menu"
-                     onClick={handleDrawerOpen}
-                     className={classes.menuButton}
-                  >
-                     <MenuIcon />
-                  </IconButton>
-                  <Typography variant="h6" className={classes.title}>
-                     VICTOR KEAN
-                  </Typography>
-               </Toolbar>
-            </AppBar>
-         </ElevationScroll>
+         <AppBar
+            position="fixed"
+            style={{
+               background: "rgba(0,0,0,0)",
+            }}
+            className={classes.appBar}
+            elevation={0}
+         >
+            <Toolbar>
+               <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={handleDrawerOpen}
+                  className={classes.menuButton}
+               >
+                  <MenuIcon
+                     fontSize="large"
+                     style={{ color: scrollTrig ? "#555" : "#eee" }}
+                  />
+               </IconButton>
+            </Toolbar>
+         </AppBar>
          <Drawer
             className={classes.drawer}
             anchor="left"
@@ -112,8 +104,12 @@ export const NavBarDrawer = (props: any) => {
             </div>
             <Divider style={{ backgroundColor: "#aaa" }} />
             <List>
-               {menuOptions.map(({ label, icon, link }, index) => (
-                  <ListItem button key={label + index}>
+               {menuOptions.map(({ label, icon, divId }, index) => (
+                  <ListItem
+                     button
+                     key={label + index}
+                     onClick={() => document.getElementById(divId)?.scrollIntoView()}
+                  >
                      <ListItemIcon style={{ color: "#fff" }}>{icon}</ListItemIcon>
                      <ListItemText primary={label} style={{ color: "#fff" }} />
                   </ListItem>

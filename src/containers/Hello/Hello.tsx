@@ -3,10 +3,11 @@ import React from "react";
 import { useStyles } from "./styles";
 
 export const Hello = (props: any) => {
+   const { id } = props;
    const classes = useStyles();
 
    return (
-      <div className={classes.helloDiv}>
+      <div className={classes.helloDiv} id={id}>
          <Grid
             container
             spacing={0}
@@ -17,7 +18,7 @@ export const Hello = (props: any) => {
          >
             <Grid item xs={12} style={{ textAlign: "left", padding: "1rem" }}>
                <Typography
-                  variant="h2"
+                  variant="h1"
                   style={{ fontWeight: "bold", color: "#eee" }}
                >
                   Hello!

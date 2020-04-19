@@ -8,8 +8,11 @@ function App() {
    return (
       <div>
          <NavBarDrawer />
-         <Hello />
-         <About />
+         <Hello id="helloSec" />
+         <About id="aboutSec" />
+         <div id="skillsSec" />
+         <div id="workSec" />
+         <div id="contactSec" />
       </div>
    );
 }
