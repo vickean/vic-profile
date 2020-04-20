@@ -1,10 +1,10 @@
 import { makeStyles } from "@material-ui/core";
-import BgImage from "../../assets/sebastian-pena-lambarri-7Tl5rytGDPg-unsplash.jpg";
+import BgImage from "../../assets/carlos-quintero-_wbpK1imCrs-unsplash.jpg";
 
 export const useStyles = makeStyles((theme) => ({
-   helloDiv: {
+   skillsDiv: {
       backgroundImage: `url(${BgImage})`,
-      backgroundPosition: "bottom",
+      backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
    },

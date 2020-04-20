@@ -3,6 +3,9 @@ import "./App.css";
 import { NavBarDrawer } from "./components/NavBarDrawer/NavBarDrawer";
 import { About } from "./containers/About/About";
 import { Hello } from "./containers/Hello/Hello";
+import { Skills } from "./containers/Skills/Skills";
+import { Contact } from "./containers/Contact/Contact";
+import { Work } from "./containers/Work/Work";
 
 function App() {
    return (
@@ -10,9 +13,9 @@ function App() {
          <NavBarDrawer />
          <Hello id="helloSec" />
          <About id="aboutSec" />
-         <div id="skillsSec" />
-         <div id="workSec" />
-         <div id="contactSec" />
+         <Skills id="skillsSec" />
+         <Work id="workSec" />
+         <Contact id="contactSec" />
       </div>
    );
 }

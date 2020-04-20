@@ -1,8 +1,8 @@
 import { makeStyles } from "@material-ui/core";
-import BgImage from "../../assets/sebastian-pena-lambarri-7Tl5rytGDPg-unsplash.jpg";
+import BgImage from "../../assets/anthony-cantin-W9ATCsAy6-8-unsplash.jpg";
 
 export const useStyles = makeStyles((theme) => ({
-   helloDiv: {
+   contactDiv: {
       backgroundImage: `url(${BgImage})`,
       backgroundPosition: "bottom",
       backgroundRepeat: "no-repeat",
