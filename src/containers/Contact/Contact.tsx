@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import React from "react";
 import { useStyles } from "./styles";
 
@@ -16,6 +16,13 @@ export const Contact = (props: any) => {
             justify="center"
             style={{ minHeight: "100vh" }}
          ></Grid>
+         <Typography
+            component="div"
+            variant="caption"
+            style={{ color: "white", textAlign: "center", marginBottom: "1rem" }}
+         >
+            &#169; 2020 Victor Kean. All Rights Reserved.
+         </Typography>
       </div>
    );
 };

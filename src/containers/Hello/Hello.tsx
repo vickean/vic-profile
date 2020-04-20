@@ -16,7 +16,7 @@ export const Hello = (props: any) => {
             justify="center"
             style={{ minHeight: "100vh" }}
          >
-            <Grid item xs={12} style={{ textAlign: "left", padding: "1rem" }}>
+            <Grid item xs={12} style={{ textAlign: "left", padding: "2rem" }}>
                <Typography
                   variant="h1"
                   style={{ fontWeight: "bold", color: "#eee" }}
