@@ -10,8 +10,6 @@ export const About = (props: any) => {
       <div className={classes.aboutDiv} id={id}>
          <Grid
             container
-            spacing={0}
-            direction="column"
             alignItems="center"
             justify="center"
             style={{ minHeight: "100vh" }}
@@ -19,22 +17,33 @@ export const About = (props: any) => {
             <Grid
                item
                xs={12}
-               style={{ textAlign: "left", padding: "2rem", color: "#fff" }}
+               style={{
+                  textAlign: "right",
+                  padding: "2rem",
+                  color: "#fff",
+                  maxWidth: "400px",
+               }}
             >
                <Typography variant="h4" component="span">
-                  I'm a maker by passion and profession. Over the past 5 years, I've
-                  designed and built various things from escape room props to
-                  contract management software.
+                  I'm a <b>maker</b> by <b>passion</b> and <b>profession</b>. I've
+                  helped design and built interactive escape room props as well as
+                  contract management apps.
                </Typography>
             </Grid>
             <Grid
                item
                xs={12}
-               style={{ textAlign: "right", padding: "2rem", color: "#fff" }}
+               style={{
+                  textAlign: "left",
+                  padding: "2rem",
+                  color: "#fff",
+                  maxWidth: "400px",
+               }}
             >
                <Typography variant="h4" component="span">
-                  I believe in making things that impact lives through design and
-                  engineering and my favourite sculpting tool just happens to be web.
+                  <b>Web technologies</b> both inspire and enable me to build things
+                  that merge <b>art</b> and <b>engineering</b>. I aspire to create
+                  things that <b>positively impact lives</b>.
                </Typography>
             </Grid>
          </Grid>
